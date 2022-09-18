@@ -104,7 +104,6 @@ const TaskTable = () => {
             document.addEventListener('mousemove', (e) => {
                 if (curCol) {
                     var diffX = e.pageX - pageX;
-                    console.log(diffX)
                     if (nxtCol) {
                         nxtCol.style.width = (nxtColWidth - (diffX)) + 'px';
                     }
@@ -151,11 +150,6 @@ const TaskTable = () => {
                                     >
                                     Task Name { tableSorting.sortBy == 'name' ? ( tableSorting.ascend ? <BiChevronDown /> : <BiChevronUp /> ) : ''}
                                 </div>
-                                <div 
-                                    className='table-header-resize' 
-                                    id='nameCol' 
-                                    // onMouseDown={(e) => handleStartLoc(e)}
-                                ></div>
                             </div>
                         </th>
                         <th className='table-header'>
@@ -163,7 +157,6 @@ const TaskTable = () => {
                                 <div className='table-header-left'  onClick={() => handleTableSort('assignedTo')}>
                                     Assignee { tableSorting.sortBy == 'assignedTo' ? ( tableSorting.ascend ? <BiChevronDown /> : <BiChevronUp /> ) : ''}
                                 </div>
-                                <div className='table-header-resize'></div>
                             </div>
                         </th>
                         <th className='table-header' onClick={() => handleTableSort('dueDate')}>
@@ -214,9 +207,6 @@ const TaskTable = () => {
                     
                 </tbody>
             </table>
-            <button className='btn' onClick={toggleDetailWindow}>
-                Show Detail Window
-            </button>
             <ContextMenu show={show} anchorPoint={anchorPoint} id={contextId} tasks={tasks} />
         </>
     )

@@ -22,17 +22,15 @@ const Navbar = () => {
                     </div>
                     <div className="nav-title-flex pl8">
                         <div style={{ paddingTop: '12px'}}>Title Area Top</div>
-                        <div style={{ paddingTop: '18px'}}>
+                        <div style={{ paddingTop: '6px'}}>
                             <div className="flex">
-                                <div className="pl8">Overview</div>
-                                <div className="pl8">List</div>
-                                <div className="pl8">Board</div>
-                                <div className="pl8">Timeline</div>
-                                <div className="pl8">Calendar</div>
-                                <div className="pl8">Workflow</div>
-                                <div className="pl8">More...</div>
-                                
-                                
+                                <button className={`btn-nav-tab`} value="upcoming">Overview</button>
+                                <button className={`btn-nav-tab tab-selected`} value="upcoming">List</button>
+                                <button className={`btn-nav-tab`} value="upcoming">Board</button>
+                                <button className={`btn-nav-tab`} value="upcoming">Timeline</button>
+                                <button className={`btn-nav-tab`} value="upcoming">Calendar</button>
+                                <button className={`btn-nav-tab`} value="upcoming">Workflow</button>
+                                <button className={`btn-nav-tab`} value="upcoming">More...</button>
                             </div>
                         </div>
                     </div>
