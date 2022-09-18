@@ -55,6 +55,17 @@ h5
     /* background-color: var(--clr-gray-1); */
 }
 
+.task-container {
+    border-top: 1px solid var(--clr-gray-3);
+    padding-top: 8px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 /* ========== 
    SIDEBAR
    ========== */
@@ -166,6 +177,13 @@ h5
 
 .nav-spacing {
     padding: 0 0 0 16px;
+}
+
+.nav-title-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /* ========== 
@@ -350,13 +368,36 @@ h5
     border-bottom: 1px solid var(--clr-gray-4);
     border-right: 1px solid var(--clr-gray-4);
     text-align: left;
-    padding: 6px 12px 6px 12px;
+    
     cursor: pointer;
 }
 
 .table-header:hover {
     color: black;
     background-color: var(--clr-gray-2);
+}
+
+.table-header-left {
+    padding: 6px 12px 6px 12px;
+}
+.table-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-header-resize {
+    width: 3px;
+    height: 22px;
+    margin-right: -3px;
+    z-index: 1000;
+}
+
+.table-header-resize:hover {
+    background-color: blue;
+    cursor: ew-resize;
+    /* cursor:e-resize */
+    /* border: 3px solid blue; */
 }
 
 .table-row:hover {
@@ -584,4 +625,73 @@ h5
     flex: 0 0 240px;
     visibility: visible;
     /* display: block; */
+}
+
+/* =============
+   FILTER BAR
+   ============= */
+
+.filter-bar-container {
+    width: 100%;
+}
+
+.filter-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-bar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.filter-bar-btn {
+    background-color: transparent;
+    color: #6d6e6f;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 8px 4px 8px;
+}
+
+.filter-bar-btn:hover {
+    background-color: var(--clr-gray-1);
+    color: black;
+}
+
+.filter-bar-add-task-btn {
+
+}
+
+/* =============
+   DROPDOWN
+   ============= */
+
+.dropdown-container {
+    position: absolute;
+    /* top: 75px;
+    left: 400px; */
+    background: white;
+    visibility: hidden;
+    border: 1px solid var(--clr-gray-2);
+    border-radius: 8px;
+}
+
+.show-dropdown-container {
+    visibility: visible;
+}
+
+.dropdown-link-btn {
+    border: none;
+    padding: 8px 12px 8px 12px;
+    text-align: left;
+    background-color: transparent;
+    width: 100%;
+    color: #6d6e6f;
+    cursor: pointer;
+}
+
+ul.dropdown-list {
+    list-style: none;
 }

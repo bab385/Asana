@@ -1,3 +1,7 @@
+import { tasks } from "./data/tasks"
+
+const originalTasks = tasks
+
 const reducer = (state, action) => {
     if ( action.type === 'CLOSE_SIDEBAR') {
         return { ...state, isSidebarOpen: false}
@@ -118,11 +122,27 @@ const reducer = (state, action) => {
 
     if ( action.type === 'TOGGLE_DETAIL' ) {
         const showDetailWindow = state.showDetailWindow
-        console.log('toggle detail')
         return { ...state, showDetailWindow: !showDetailWindow }
     }
 
-    throw new Error ('no matching action type in reducer')
+    if ( action.type === 'FILTER_COMPLETE') {
+
+
+        // if (action.payload === 'complete') {
+        //     const tempTasks = originalTasks.filter((task) => task.completed === true)
+        //     return { ...state, tasks: tempTasks }
+        // }
+        // if (action.payload === 'incomplete') {
+        //     const tempTasks = originalTasks.filter((task) => task.completed === false)
+        //     return { ...state, tasks: tempTasks }
+        // }
+        // if (action.payload === 'all') {
+        //     return { ...state, tasks: originalTasks }
+        // }
+        return { ...state, completeFilter: action.payload }
+    }
+
+    throw new Error ('no matching action type in reducer' + action.type)
 }
 
 export default reducer;

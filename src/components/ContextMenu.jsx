@@ -8,7 +8,7 @@ import { useGlobalContext } from '../context';
 
 const ContextMenu = (props) => {
     const { show, anchorPoint, id, tasks } = props
-    console.log(props)
+    
     const { markCompleted } = useGlobalContext()
 
     const task = tasks.find((task) => task.id === id)

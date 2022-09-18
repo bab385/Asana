@@ -19,7 +19,18 @@ const initialState = {
         sortBy: 'name',
         ascend: true
     },
-    showDetailWindow: true
+    showDetailWindow: false,
+    filterDropdown: {
+        show: false,
+        locY: 0,
+        locX: 0,
+    },
+    dropdownButtons: {
+        allFilter: '',
+        sortItems: '',
+        link: false
+    },
+    completeFilter: 'all',
 }
 
 const AppProvider = ({children}) => {
@@ -45,6 +56,10 @@ const AppProvider = ({children}) => {
         dispatch({ type: 'TOGGLE_DETAIL'})
     }
 
+    const filterComplete = (value) => {
+        dispatch({ type: 'FILTER_COMPLETE', payload: value})
+    }
+
     useEffect(() => {
         dispatch({ type: 'CHANGE_USER'})
     }, [state.userId])
@@ -52,6 +67,12 @@ const AppProvider = ({children}) => {
     useEffect(() => {
         dispatch({ type: 'TABLE_SORT_EFFECT'})
     }, [state.tableSorting])
+
+    // useEffect(() => {
+    //     dispatch({ type: 'FILTER_COMPLETE'})
+    // }, [state.tasks])
+
+
 
     return (
         <AppContext.Provider
@@ -61,7 +82,8 @@ const AppProvider = ({children}) => {
                 openSidebar,
                 markCompleted,
                 handleTableSort,
-                toggleDetailWindow
+                toggleDetailWindow,
+                filterComplete
             }}    
         >
             { children }

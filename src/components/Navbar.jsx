@@ -20,6 +20,22 @@ const Navbar = () => {
                     <div className='nav-spacing'>
                         Home
                     </div>
+                    <div className="nav-title-flex pl8">
+                        <div style={{ paddingTop: '12px'}}>Title Area Top</div>
+                        <div style={{ paddingTop: '18px'}}>
+                            <div className="flex">
+                                <div className="pl8">Overview</div>
+                                <div className="pl8">List</div>
+                                <div className="pl8">Board</div>
+                                <div className="pl8">Timeline</div>
+                                <div className="pl8">Calendar</div>
+                                <div className="pl8">Workflow</div>
+                                <div className="pl8">More...</div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='container-right'>
